@@ -60,6 +60,13 @@
                 </li>
 
                 <li>
+                    <a href="<?php echo base_url("users"); ?>">
+                        <i class="menu-icon fa fa-users"></i>
+                        <span class="menu-text">Kullanıcılar</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="<?php echo base_url("emailsettings"); ?>">
                         <i class="menu-icon zmdi zmdi-email zmdi-hc-lg"></i>
                         <span class="menu-text">E-Posta Ayarları</span>

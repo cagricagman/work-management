@@ -9,6 +9,7 @@ class Users extends CI_Controller {
     {
         parent::__construct();
         $this->viewFolder = "users_v";
+        $this->load->model("users_model");
 
 //        if (!get_active_user()){
 //            redirect(base_url("login"));
@@ -20,6 +21,7 @@ class Users extends CI_Controller {
         $viewData = new stdClass();
         $viewData->viewFolder = $this->viewFolder;
         $viewData->subViewFolder = "list";
+        $viewData->items = $this->users_model->getAll();
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
 	}
 }

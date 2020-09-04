@@ -38,9 +38,7 @@ class Users extends CI_Controller {
         $viewData = new stdClass();
         $viewData->viewFolder = $this->viewFolder;
         $viewData->subViewFolder = "edit";
-=======
         $viewData->items = $this->users_model->getAll();
->>>>>>> 02f60fa45d490919a9825813ff513c2ee243c07c
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
 	}
 }

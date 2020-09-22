@@ -1,4 +1,6 @@
-<?php //$user = get_user(); ?>
+<?php //$user = get_user(); 
+$uri = $this->uri->segment(1);
+?>
 
 <aside id="menubar" class="menubar light">
     <div class="app-user">
@@ -52,47 +54,56 @@
         <div class="menubar-scroll-inner">
             <ul class="app-menu">
 
-                <li>
+                <li class="<?php echo ($uri == "dashboard") ? "active" : ""; ?>">
                     <a href="<?php echo base_url("dashboard"); ?>">
                         <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
                         <span class="menu-text">Dashboards</span>
                     </a>
                 </li>
 
-                <li>
+                <li class="<?php echo ($uri == "users") ? "active" : ""; ?>">
                     <a href="<?php echo base_url("users"); ?>">
                         <i class="menu-icon fa fa-users"></i>
                         <span class="menu-text">Kullanıcılar</span>
                     </a>
                 </li>
 
-                <li>
+                <li class="<?php echo ($uri == "projects") ? "active" : ""; ?>">
+                    <a href="<?php echo base_url("projects"); ?>">
+                        <i class="menu-icon fa fa-object-group"></i>
+                        <span class="menu-text">Projeler</span>
+                    </a>
+                </li>
+
+                <li class="<?php echo ($uri == "emailsettings") ? "active" : ""; ?>">
                     <a href="<?php echo base_url("emailsettings"); ?>">
                         <i class="menu-icon zmdi zmdi-email zmdi-hc-lg"></i>
                         <span class="menu-text">E-Posta Ayarları</span>
                     </a>
                 </li>
 
-                <li>
+                <!--
+                <li <?php echo ($uri == "") ? "active" : ""; ?>>
                     <a href="<?php echo base_url("courses"); ?>">
                         <i class="menu-icon fa fa-calendar"></i>
                         <span class="menu-text">Eğitimler</span>
                     </a>
                 </li>
 
-                <li>
+                <li <?php echo ($uri == "") ? "active" : ""; ?>>
                     <a href="<?php echo base_url("users"); ?>">
                         <i class="menu-icon fa fa-user-secret"></i>
                         <span class="menu-text">Kullanıcılar</span>
                     </a>
                 </li>
 
-                <li>
+                <li <?php echo ($uri == "") ? "active" : ""; ?>>
                     <a href="#">
                         <i class="menu-icon zmdi zmdi-lamp zmdi-hc-lg"></i>
                         <span class="menu-text">Popup Hizmeti</span>
                     </a>
                 </li>
+                -->
 
             </ul><!-- .app-menu -->
         </div><!-- .menubar-scroll-inner -->

@@ -4,7 +4,7 @@
                                    class="btn btn-primary btn-xs btn-outline">Yeni Ekle</a></h3>
     </div>
 
-    <?php if ($datas == null) { ?>
+    <?php if ($datas != null) { ?>
         <div class="col-md-12">
             <div class="alert alert-info alert-custom alert-dismissible">
                 <h4 class="alert-title">Herhangi bir veri bulunmamaktadır</h4>

@@ -38,7 +38,7 @@ class Projects extends CI_Controller {
         $viewData = new stdClass();
         $viewData->viewFolder = $this->viewFolder;
         $viewData->subViewFolder = "edit";
-        $viewData->items = $this->projects_model->getAll();
+        $viewData->item = $this->projects_model->get(array("Id" => $id));
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
 	}
 }

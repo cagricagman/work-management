@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     $(function () {
-        $('#datetimepicker2').datetimepicker({
-            locale : "tr"
+        $('#datetimepicker').datetimepicker({
+            language: 'tr'
         });
     });
 

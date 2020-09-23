@@ -61,3 +61,17 @@ function send_mail($toEmail = "", $subject = "", $message = ""){
     return $t->email->send();
 
 }
+
+function dbGetUserInfo($userId)
+{
+    $t = &get_instance();
+    $t->load->model("users_model");
+
+    $user = $t->users_model->get(array("Id" => $userId));
+
+    if($user != null){
+        return $user;
+    } else {
+        return "Kayıtlarda Yok";
+    }
+}

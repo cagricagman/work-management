@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 22 Eyl 2020, 16:57:01
--- Sunucu sürümü: 10.4.13-MariaDB
--- PHP Sürümü: 7.4.8
+-- Üretim Zamanı: 23 Eyl 2020, 16:43:10
+-- Sunucu sürümü: 10.4.14-MariaDB
+-- PHP Sürümü: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,13 +51,19 @@ CREATE TABLE `projects` (
   `priority_status` varchar(150) COLLATE utf8_turkish_ci DEFAULT NULL,
   `incumbents` varchar(255) COLLATE utf8_turkish_ci DEFAULT NULL,
   `folder_name` varchar(255) COLLATE utf8_turkish_ci DEFAULT NULL,
-  `note_Id` int(11) DEFAULT NULL,
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   `isActive` tinyint(1) DEFAULT NULL,
   `status` varchar(255) COLLATE utf8_turkish_ci DEFAULT NULL,
   `note` text COLLATE utf8_turkish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `projects`
+--
+
+INSERT INTO `projects` (`Id`, `title`, `start_date`, `finish_date`, `priority_status`, `incumbents`, `folder_name`, `createdAt`, `updatedAt`, `isActive`, `status`, `note`) VALUES
+(3, 'Proje 1', '2020-09-23 00:00:00', NULL, 'Orta', '[\"1\",\"4\"]', 'proje-1', '2020-09-23 14:09:56', NULL, 1, 'Devam Ediyor', 'kajshdskajdfbsdf asjkhdjksadhfskdjhfb');
 
 -- --------------------------------------------------------
 
@@ -145,7 +151,7 @@ ALTER TABLE `notes`
 -- Tablo için AUTO_INCREMENT değeri `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`

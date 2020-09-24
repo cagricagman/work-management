@@ -10,11 +10,14 @@ class Projects extends CI_Controller {
         parent::__construct();
         $this->viewFolder = "projects_v";
         $this->load->model("projects_model");
+        $this->load->model("notes_model");
+        $this->load->model("images_model");
+        $this->load->model("files_model");
         $this->load->model("users_model");
 
-//        if (!get_active_user()){
-//            redirect(base_url("login"));
-//        }
+       if (!get_active_user()){
+           redirect(base_url("login"));
+       }
     }
 
     public function index()
@@ -43,6 +46,19 @@ class Projects extends CI_Controller {
         $viewData->subViewFolder = "update";
         $viewData->item = $this->projects_model->get(array("Id" => $id));
         $viewData->users = $this->users_model->getAll(array("isActive" => 1));
+        $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
+    }
+
+    public function detail_form($id)
+	{
+        $viewData = new stdClass();
+        $viewData->viewFolder = $this->viewFolder;
+        $viewData->subViewFolder = "detail";
+        $viewData->project = $this->projects_model->get(array("Id" => $id));
+        $viewData->users = $this->users_model->getAll(array("isActive" => 1));
+        $viewData->images = $this->images_model->getAll();
+        $viewData->files = $this->files_model->getAll();
+        $viewData->notes = $this->notes_model->getAll();
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
     }
     

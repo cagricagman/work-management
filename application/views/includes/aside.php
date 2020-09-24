@@ -75,7 +75,7 @@ $uri = $this->uri->segment(1);
                     </a>
                 </li>
 
-                <li style="display : none;" class="<?php echo ($uri == "projects") ? "active" : ""; ?>">
+                <li class="<?php echo ($uri == "projects") ? "active" : ""; ?>">
                     <a href="<?php echo base_url("projects"); ?>">
                         <i class="menu-icon fa fa-object-group"></i>
                         <span class="menu-text">Projeler</span>

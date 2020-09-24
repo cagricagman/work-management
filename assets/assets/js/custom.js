@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    $(function () {
-        $('#datetimepicker').datetimepicker({
-            language: 'tr'
-        });
-    });
+    // $(function () {
+    //     $('#datetimepicker').datetimepicker({
+    //         language: 'tr'
+    //     });
+    // });
 
     $(".content-container").on("click", ".remove-btn", function () {
 
@@ -26,6 +26,7 @@ $(document).ready(function () {
                     'Silme İşlemi Gerçekleşti.',
                     'success'
                 );
+                // sleep(2000);
                 window.location.href = $data_url;
             }
         })

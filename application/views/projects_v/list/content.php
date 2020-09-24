@@ -17,7 +17,7 @@
 
         <div class="col-md-12">
             <div class="widget p-lg">
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered content-container">
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Başlık</th>
@@ -47,7 +47,7 @@
                             <td class="text-center">
                                 <a href="<?= base_url("projects/edit_form/$data->Id"); ?>" class="btn btn-outline btn-success"><i class="fa fa-pencil"></i></a>
                                 <a href="<?= base_url("projects/detail_form/$data->Id"); ?>" class="btn btn-outline btn-dark"><i class="fa fa-folder-open"></i></a>
-                                <button class="btn btn-outline btn-danger"><i class="fa fa-trash"></i></button>
+                                <button class="btn btn-outline btn-danger remove-btn" data-url="<?= base_url("projects/delete/$data->Id"); ?>" ><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
                     <?php } ?>

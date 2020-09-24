@@ -22,12 +22,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Başlangıç Tarihi</label>
-										<div class="input-group date" id="datetimepicker" data-plugin="datetimepicker">
-											<input type="text" class="form-control" value="<?= $item->start_date; ?>" name="start_date">
-											<span class="input-group-addon bg-info text-white">
-												<span class="glyphicon glyphicon-calendar"></span>
-											</span>
-										</div>
+										<input type="text" id="datetimepicker5" name="start_date" class="form-control" data-plugin="datetimepicker" data-options="{ defaultDate: '<?= $item->start_date; ?>' }">
 										<?php if (isset($form_error)) { ?>
 											<small class="pull-right input-form-error"><?php echo form_error("start_date") ?></small>
 										<?php } ?>
@@ -36,12 +31,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Bitiş Tarihi</label>
-										<div class="input-group date" id="datetimepicker" data-plugin="datetimepicker">
-											<input type="text" class="form-control" value="<?= $item->finish_date; ?>" name="finish_date">
-											<span class="input-group-addon bg-info text-white">
-												<span class="glyphicon glyphicon-calendar"></span>
-											</span>
-										</div>
+										<input type="text" id="datetimepicker5" name="finish_date" class="form-control" data-plugin="datetimepicker" data-options="{ defaultDate: '<?= ($item->finish_date != null) ? $item->finish_date : ""; ?>' }">
 										<?php if (isset($form_error)) { ?>
 											<small class="pull-right input-form-error"><?php echo form_error("finish_date") ?></small>
 										<?php } ?>
@@ -53,13 +43,8 @@
 								<label for="select2-demo-2" class="control-label">Proje Çalışanları</label>
 								<select id="select2-demo-2" class="form-control" name="incumbents[]" data-plugin="select2" multiple>
                                     <?php $userJsonDecode = json_decode($item->incumbents);
-                                     foreach($users as $user){ 
-                                         foreach($userJsonDecode as $valueUser){
-                                            if($user->Id == $valueUser){ ?>
-                                                <option selected value="<?= $user->Id; ?>"><?= $user->fullname; ?></option>
-                                           <?php } ?> 
-                                        <?php } ?>
-                                           <option value="<?= $user->Id; ?>"><?= $user->fullname; ?></option>
+                                     foreach($users as $user){  ?>
+                                                <option <?= (in_array($user->Id,$userJsonDecode) == true) ? "selected" : "" ?>  value="<?= $user->Id; ?>"><?= $user->fullname; ?></option>
                                     <?php } ?> 
 								</select>
 									<?php if (isset($form_error)) { ?>

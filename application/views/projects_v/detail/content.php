@@ -88,18 +88,52 @@
                     <button type="submit" class="btn btn-primary btn-md">Kaydet</button>
                 </form>
             </div><!-- .widget-body -->
+            <hr class="widget-separator">
+            <div class="widget-body">
+                <h4 class="m-b-lg">Proje Rapor Harekeleri</h4>
+                <table class="table table-hover pictures_list">
+                    <tbody>
+                        <tr>
+                            <th class="text-center">#ID</th>
+                            <th class="text-center">Ekleyen Kullanıcı</th>
+                            <th class="text-center">İşlem Tarihi</th>
+                            <th class="text-center">Detay</th>
+                            <th class="text-center">İşlem</th>
+                        </tr>
+                        <?php //foreach ($uploads as $upload) { ?>
+                        
+                            <tr>
+                                <td class="text-center">#<?php //echo $upload->Id; ?></td>
+                                <td class="text-center"><?php //echo $upload->createdUserId; ?></td>
+                                <td class="text-center"><?php  //get_readable_date($upload->createdAt); ?></td>
+                                <td class="text-center"></td>
+                                <td class="text-center">
+                                    <button
+                                        data-url="<?php echo base_url("projects/fileDelete/"); ?>"
+                                        class="btn btn-danger btn-outline btn-sm remove-btn"><i
+                                            class="fa fa-trash"></i>
+                                    Sil
+                                    </button>
+                                </td>
+                            </tr>
+
+                        <?php// } ?>
+                        
+                    </tbody>
+                </table>
+            </div>
         </div><!-- .widget -->
 	</div>
 
     <div class="col-md-12">
         <div class="widget">
             <div class="widget-body">
-                <form action="<?php echo base_url("galleries/file_upload/$item->id/$item->gallery_type/$item->folder_name"); ?>"
+                <form action="<?php echo base_url("projects/file_upload/$project->Id"); ?>"
                       class="dropzone"
                       id="dropzone"
-                      data-url="<?php echo base_url("galleries/refresh_file_list/$item->id/$item->gallery_type"); ?>"
+                      data-url="<?php echo base_url("projects/refresh_file_list/$project->Id"); ?>"
                       data-plugin="dropzone"
-                      data-options="{ url : '<?php echo base_url("galleries/file_upload/$item->id/$item->gallery_type/$item->folder_name"); ?>'}">
+                      data-options="{ url : '<?php echo base_url("projects/file_upload/$project->Id"); ?>'}">
                     <div class="dz-message">
                         <h3 class="m-h-lg">
                             Dosyaları Buraya Sürükleyin ya da Buraya Tıklayın

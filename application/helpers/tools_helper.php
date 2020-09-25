@@ -75,3 +75,12 @@ function dbGetUserInfo($userId)
         return "Kayıtlarda Yok";
     }
 }
+
+function getFileType($extention){
+    $image_extention = array("jpg","JPG","jpeg","JPEG","PNG","png");
+    if(in_array($extention,$image_extention)){
+        return "image";
+    } else {
+        return "file";
+    }
+}
